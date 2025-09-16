@@ -8,6 +8,9 @@ import {
   PointElement,
   Tooltip,
   Legend,
+  // Import the controllers for the chart types
+  BarController,
+  LineController
 } from "chart.js";
 
 ChartJS.register(
@@ -17,7 +20,10 @@ ChartJS.register(
   LineElement,
   PointElement,
   Tooltip,
-  Legend
+  Legend,
+  // Register the imported controllers
+  BarController,
+  LineController
 );
 
 function IncomeChart() {
@@ -82,13 +88,11 @@ function IncomeChart() {
   };
 
   return (
-  
     <div className="bg-white rounded-xl p-4 sm:p-6 shadow">
       <h3 className="text-gray-700 font-semibold text-base sm:text-lg">Income Trend</h3>
       <p className="text-gray-500 text-xs sm:text-sm mb-4">
         Your monthly income and growth for the last 6 months.
       </p>
-  
       <div className="h-64 sm:h-80">
         <ReactChart type="bar" data={chartData} options={chartOptions} />
       </div>
